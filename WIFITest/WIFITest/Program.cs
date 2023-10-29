@@ -12,8 +12,8 @@ namespace WIFITest
         {
             Debug.WriteLine("Hello from nanoFramework!");
 
-            var ssid = "!FRITZBox";
-            var pw = "!FakePa$$word2021";
+            var ssid = "";
+            var pw = "";
 
             var cancellationTokenSource = new CancellationTokenSource(TimeSpan.FromMinutes(3));
 
