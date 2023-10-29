@@ -29,9 +29,11 @@ namespace EncoderRGBStrip
             encoderSWPin.DebounceTimeout = TimeSpan.FromSeconds(2);
             encoderSWPin.ValueChanged += _EncoderSWPinValueChanged;
 
-            _neo = new Ws2808(23, 1);
-            _neo.Image.Clear();
-            _neo.Update();
+            _neo = new Ws2808(25, 7);
+            //_neo.Image.Clear();
+            //_neo.Update();
+
+            _SetColor(255, 255, 255);
             Thread.Sleep(Timeout.Infinite);
 
             // Browse our samples repository: https://github.com/nanoframework/samples
@@ -83,6 +85,7 @@ namespace EncoderRGBStrip
 
             for (int i = 0; i < image.Width; i++)
             {
+                Debug.WriteLine($"setting color for index: [{i}]");
                 image.SetPixel(i, 0, g, r, b);
             }
 
