@@ -9,8 +9,8 @@ namespace WebServerTemplate
 {
     public class Program
     {
-        private const string SSID = "";
-        private const string WIFI_PASSWORD = "";
+        private const string SSID = "!FRITZBox";
+        private const string WIFI_PASSWORD = "!FakePa$$word2021";
         private static readonly TimeSpan _timeout = TimeSpan.FromMinutes(3);   
 
         public static void Main()
