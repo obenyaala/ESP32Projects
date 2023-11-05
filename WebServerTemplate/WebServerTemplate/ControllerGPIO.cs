@@ -1,4 +1,5 @@
 ﻿
+using nanoFramework.Json;
 using nanoFramework.WebServer;
 using System.Net;
 
@@ -16,6 +17,23 @@ namespace WebServerTemplate
 
             WebServer.OutPutStream(e.Context.Response, "Succeded!");
             //WebServer.OutputHttpCode(e.Context.Response, HttpStatusCode.OK);
+        }
+
+        [Route("GetDeviceConfig")]
+        [Method("GET")]
+        public void GetDeviceConfig(WebServerEventArgs e)
+        {
+            var config = new
+            {
+                Led  = new
+                {
+                    RGB = true,
+                    Dimmable = true,
+                },
+                LedSettings = ""
+            };
+
+            var json = JsonSerializer.SerializeObject(config);
         }
     }
 }
