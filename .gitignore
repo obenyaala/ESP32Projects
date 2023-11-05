@@ -475,3 +475,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/WebServerTemplate/WebServerTemplate/WIFIConfig.cs
+/WIFITest/WIFITest/WIFIConfig.cs

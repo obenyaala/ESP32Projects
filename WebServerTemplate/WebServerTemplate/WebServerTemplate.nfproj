@@ -22,6 +22,7 @@
     <Compile Include="ControllerService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WIFIConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib">

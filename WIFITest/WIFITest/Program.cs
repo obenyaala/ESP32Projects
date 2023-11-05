@@ -12,16 +12,13 @@ namespace WIFITest
         {
             Debug.WriteLine("Hello from nanoFramework!");
 
-            var ssid = "";
-            var pw = "";
-
             var cancellationTokenSource = new CancellationTokenSource(TimeSpan.FromMinutes(3));
 
             try
             {
                 var availableNetwork = new WifiAvailableNetwork();
                 var adapter = WifiNetworkHelper.WifiAdapter;
-                var connected = WifiNetworkHelper.ScanAndConnectDhcp(ssid, pw, token: cancellationTokenSource.Token);
+                var connected = WifiNetworkHelper.ScanAndConnectDhcp(WIFIConfig.SSID, WIFIConfig.WIFI_PASSWORD, token: cancellationTokenSource.Token);
 
                 Debug.WriteLine($"Status: [{WifiNetworkHelper.Status}]. Is Connected: [{connected}]");
 

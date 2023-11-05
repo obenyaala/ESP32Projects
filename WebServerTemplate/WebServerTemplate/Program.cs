@@ -9,8 +9,8 @@ namespace WebServerTemplate
 {
     public class Program
     {
-        private const string SSID = "!FRITZBox";
-        private const string WIFI_PASSWORD = "!FakePa$$word2021";
+        //private const string SSID = "!FRITZBox";
+        //private const string WIFI_PASSWORD = "!FakePa$$word2021";
         private static readonly TimeSpan _timeout = TimeSpan.FromMinutes(3);   
 
         public static void Main()
@@ -25,7 +25,7 @@ namespace WebServerTemplate
                 var availableNetwork = new WifiAvailableNetwork();
                 var adapter = WifiNetworkHelper.WifiAdapter;
                 // Static IP over Router 192.168.178.61
-                connected = WifiNetworkHelper.ScanAndConnectDhcp(SSID, WIFI_PASSWORD, reconnectionKind: WifiReconnectionKind.Automatic, requiresDateTime: false, token: cancellationTokenSource.Token);
+                connected = WifiNetworkHelper.ScanAndConnectDhcp(WIFIConfig.SSID, WIFIConfig.WIFI_PASSWORD, reconnectionKind: WifiReconnectionKind.Automatic, requiresDateTime: false, token: cancellationTokenSource.Token);
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace WebServerTemplate
             if (!connected)
             {
                 //TODO Turn LED on to indicate failed connection to WLAN
-                Debug.WriteLine($"Could not connect to WLAN: [{SSID}]. Exception helper: [{@WifiNetworkHelper.HelperException}]");
+                Debug.WriteLine($"Could not connect to WLAN: [{WIFIConfig.SSID}]. Exception helper: [{@WifiNetworkHelper.HelperException}]");
                 
                 if (cancellationTokenSource.IsCancellationRequested)
                 {
