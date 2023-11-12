@@ -10,4 +10,5 @@ While holding boot button!
 
 #SD card adapter soldering?!
 https://www.youtube.com/watch?v=e1xOgZsnAuw
+
 https://github.com/nanoframework/Samples
